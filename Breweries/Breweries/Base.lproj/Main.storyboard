@@ -1,24 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List Of BreweriesVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListOfBreweries" id="BYZ-38-t0r" customClass="ListOfBreweriesVC" customModule="Breweries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-FD-VYy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F7e-ZG-g2v">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dfJ-FD-VYy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ITk-pe-gFP"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M9D-n7-TKe"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gVR-qM-PMP"/>
+                            <constraint firstItem="dfJ-FD-VYy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tqx-Gu-h38"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xGe-2N-4gr"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="top" secondItem="dfJ-FD-VYy" secondAttribute="bottom" symbolic="YES" id="xN6-E1-IM7"/>
+                            <constraint firstItem="dfJ-FD-VYy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yve-hY-ahC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="breweriesSearchBar" destination="dfJ-FD-VYy" id="ygZ-d3-FYF"/>
+                        <outlet property="breweriesTableView" destination="F7e-ZG-g2v" id="hMC-Sd-Dpq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+        <!--WebVC-->
+        <scene sceneID="NhT-Hx-bHw">
+            <objects>
+                <viewController storyboardIdentifier="WebVC" id="Ne8-CL-Apx" customClass="WebVC" customModule="Breweries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oJf-I1-ydx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaL-gz-ahp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UaL-gz-ahp" firstAttribute="trailing" secondItem="7yx-bY-bZf" secondAttribute="trailing" id="IKE-Hg-4ap"/>
+                            <constraint firstItem="UaL-gz-ahp" firstAttribute="leading" secondItem="7yx-bY-bZf" secondAttribute="leading" id="g4t-So-9fO"/>
+                            <constraint firstItem="UaL-gz-ahp" firstAttribute="bottom" secondItem="7yx-bY-bZf" secondAttribute="bottom" id="xSO-kg-GJb"/>
+                            <constraint firstItem="UaL-gz-ahp" firstAttribute="top" secondItem="7yx-bY-bZf" secondAttribute="top" id="z4v-Gy-mhs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7yx-bY-bZf"/>
+                    </view>
+                    <connections>
+                        <outlet property="breweryWebView" destination="UaL-gz-ahp" id="YCl-mI-WYk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqe-uc-Hj7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="134"/>
+        </scene>
+        <!--Brewery MapVC-->
+        <scene sceneID="Yqp-qa-zfC">
+            <objects>
+                <viewController storyboardIdentifier="BreweryMapVC" id="Pz9-6m-nH2" customClass="BreweryMapVC" customModule="Breweries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N1A-1x-njh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pvh-3e-TNt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="868"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pvh-3e-TNt" firstAttribute="leading" secondItem="F7w-WA-m31" secondAttribute="leading" id="Inm-h5-2Ct"/>
+                            <constraint firstItem="pvh-3e-TNt" firstAttribute="top" secondItem="F7w-WA-m31" secondAttribute="top" id="QNc-5x-kvP"/>
+                            <constraint firstItem="pvh-3e-TNt" firstAttribute="trailing" secondItem="F7w-WA-m31" secondAttribute="trailing" id="ZaN-0b-LEk"/>
+                            <constraint firstAttribute="bottom" secondItem="pvh-3e-TNt" secondAttribute="bottom" constant="-16" id="nvR-nX-3i5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F7w-WA-m31"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y34-8c-Z60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.4637681159422" y="133.92857142857142"/>
         </scene>
     </scenes>
 </document>
