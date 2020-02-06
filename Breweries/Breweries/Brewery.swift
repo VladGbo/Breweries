@@ -23,31 +23,20 @@ struct Brewery: Codable {
     var phone     : String?
     var website   : String?
     
-    init(id: Int?,
-         name: String?,
-         type: String?,
-         street: String?,
-         city: String?,
-         state: String?,
-         postalCode: String?,
-         country: String?,
-         longitude: String?,
-         latitude: String?,
-         phone: String?,
-         website: String?) {
+    init(entity: BreweryEntity) {
         
-        self.id = id
-        self.name = name
-        self.type = type
-        self.street = street
-        self.city = city
-        self.state = state
-        self.postalCode = postalCode
-        self.country = country
-        self.longitude = longitude
-        self.latitude = latitude
-        self.phone  = phone
-        self.website = website
+        self.id = Int(entity.id)
+        self.name       = entity.name
+        self.type       = entity.type
+        self.street     = entity.street
+        self.city       = entity.city
+        self.state      = entity.state
+        self.postalCode = entity.postalCode
+        self.country    = entity.country
+        self.longitude  = entity.longitude
+        self.latitude   = entity.latitude
+        self.phone      = entity.phone
+        self.website    = entity.website
     }
     
     enum CodingKeys: String, CodingKey {
