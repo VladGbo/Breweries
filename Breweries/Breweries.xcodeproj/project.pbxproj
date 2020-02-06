@@ -10,6 +10,7 @@
 		F386BC8C23EAFAE700A10974 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC8B23EAFAE700A10974 /* NetworkService.swift */; };
 		F386BC8E23EB316300A10974 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC8D23EB316300A10974 /* WebVC.swift */; };
 		F386BC9023EB47EF00A10974 /* BreweryMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC8F23EB47EF00A10974 /* BreweryMapVC.swift */; };
+		F3A53AFC23EB53980079A3AE /* Brewery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A53AFB23EB53980079A3AE /* Brewery.swift */; };
 		F3B6D0B923EAB690009947D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6D0B823EAB690009947D2 /* AppDelegate.swift */; };
 		F3B6D0BB23EAB690009947D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6D0BA23EAB690009947D2 /* SceneDelegate.swift */; };
 		F3B6D0BD23EAB690009947D2 /* ListOfBreweriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6D0BC23EAB690009947D2 /* ListOfBreweriesVC.swift */; };
@@ -22,6 +23,7 @@
 		F386BC8B23EAFAE700A10974 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F386BC8D23EB316300A10974 /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		F386BC8F23EB47EF00A10974 /* BreweryMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryMapVC.swift; sourceTree = "<group>"; };
+		F3A53AFB23EB53980079A3AE /* Brewery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brewery.swift; sourceTree = "<group>"; };
 		F3B6D0B523EAB690009947D2 /* Breweries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breweries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B6D0B823EAB690009947D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3B6D0BA23EAB690009947D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,11 +82,12 @@
 		F3B6D0B723EAB690009947D2 /* Breweries */ = {
 			isa = PBXGroup;
 			children = (
+				F386BC9123EB483900A10974 /* Controlleres */,
 				F386BC8A23EAFA9C00A10974 /* Services */,
 				F3B6D0B823EAB690009947D2 /* AppDelegate.swift */,
 				F3B6D0BA23EAB690009947D2 /* SceneDelegate.swift */,
-				F386BC9123EB483900A10974 /* Controlleres */,
 				F3B6D0BE23EAB690009947D2 /* Main.storyboard */,
+				F3A53AFB23EB53980079A3AE /* Brewery.swift */,
 				F3B6D0C123EAB691009947D2 /* Assets.xcassets */,
 				F3B6D0C323EAB691009947D2 /* LaunchScreen.storyboard */,
 				F3B6D0C623EAB691009947D2 /* Info.plist */,
@@ -166,6 +169,7 @@
 				F386BC9023EB47EF00A10974 /* BreweryMapVC.swift in Sources */,
 				F3B6D0BD23EAB690009947D2 /* ListOfBreweriesVC.swift in Sources */,
 				F3B6D0B923EAB690009947D2 /* AppDelegate.swift in Sources */,
+				F3A53AFC23EB53980079A3AE /* Brewery.swift in Sources */,
 				F386BC8E23EB316300A10974 /* WebVC.swift in Sources */,
 				F386BC8C23EAFAE700A10974 /* NetworkService.swift in Sources */,
 				F3B6D0BB23EAB690009947D2 /* SceneDelegate.swift in Sources */,
