@@ -39,6 +39,8 @@ struct Brewery: Codable {
         self.website    = entity.website
     }
     
+    init() {}
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name

@@ -15,29 +15,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-FD-VYy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F7e-ZG-g2v">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dfJ-FD-VYy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ITk-pe-gFP"/>
-                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M9D-n7-TKe"/>
-                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gVR-qM-PMP"/>
-                            <constraint firstItem="dfJ-FD-VYy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tqx-Gu-h38"/>
-                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xGe-2N-4gr"/>
-                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="top" secondItem="dfJ-FD-VYy" secondAttribute="bottom" symbolic="YES" id="xN6-E1-IM7"/>
-                            <constraint firstItem="dfJ-FD-VYy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yve-hY-ahC"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6jf-yC-PB1"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DZU-h1-wa4"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="blK-kE-doV"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fsQ-HD-HWE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="breweriesSearchBar" destination="dfJ-FD-VYy" id="ygZ-d3-FYF"/>
                         <outlet property="breweriesTableView" destination="F7e-ZG-g2v" id="hMC-Sd-Dpq"/>
                     </connections>
                 </viewController>
