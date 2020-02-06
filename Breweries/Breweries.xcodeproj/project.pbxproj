@@ -11,6 +11,9 @@
 		F386BC8E23EB316300A10974 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC8D23EB316300A10974 /* WebVC.swift */; };
 		F386BC9023EB47EF00A10974 /* BreweryMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC8F23EB47EF00A10974 /* BreweryMapVC.swift */; };
 		F3A53AFC23EB53980079A3AE /* Brewery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A53AFB23EB53980079A3AE /* Brewery.swift */; };
+		F3A53AFF23EBDA1B0079A3AE /* BreweryCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3A53AFD23EBDA1B0079A3AE /* BreweryCD.xcdatamodeld */; };
+		F3A53B0223EBDD220079A3AE /* BreweryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A53B0023EBDD220079A3AE /* BreweryEntity+CoreDataClass.swift */; };
+		F3A53B0323EBDD220079A3AE /* BreweryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A53B0123EBDD220079A3AE /* BreweryEntity+CoreDataProperties.swift */; };
 		F3B6D0B923EAB690009947D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6D0B823EAB690009947D2 /* AppDelegate.swift */; };
 		F3B6D0BB23EAB690009947D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6D0BA23EAB690009947D2 /* SceneDelegate.swift */; };
 		F3B6D0BD23EAB690009947D2 /* ListOfBreweriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6D0BC23EAB690009947D2 /* ListOfBreweriesVC.swift */; };
@@ -24,6 +27,9 @@
 		F386BC8D23EB316300A10974 /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		F386BC8F23EB47EF00A10974 /* BreweryMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryMapVC.swift; sourceTree = "<group>"; };
 		F3A53AFB23EB53980079A3AE /* Brewery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brewery.swift; sourceTree = "<group>"; };
+		F3A53AFE23EBDA1B0079A3AE /* BreweryCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreweryCD.xcdatamodel; sourceTree = "<group>"; };
+		F3A53B0023EBDD220079A3AE /* BreweryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreweryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3A53B0123EBDD220079A3AE /* BreweryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreweryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F3B6D0B523EAB690009947D2 /* Breweries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breweries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B6D0B823EAB690009947D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3B6D0BA23EAB690009947D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,16 @@
 			path = Controlleres;
 			sourceTree = "<group>";
 		};
+		F3A53B0423EBDD5B0079A3AE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F3A53B0023EBDD220079A3AE /* BreweryEntity+CoreDataClass.swift */,
+				F3A53B0123EBDD220079A3AE /* BreweryEntity+CoreDataProperties.swift */,
+				F3A53AFD23EBDA1B0079A3AE /* BreweryCD.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		F3B6D0AC23EAB68F009947D2 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +98,7 @@
 		F3B6D0B723EAB690009947D2 /* Breweries */ = {
 			isa = PBXGroup;
 			children = (
+				F3A53B0423EBDD5B0079A3AE /* CoreData */,
 				F386BC9123EB483900A10974 /* Controlleres */,
 				F386BC8A23EAFA9C00A10974 /* Services */,
 				F3B6D0B823EAB690009947D2 /* AppDelegate.swift */,
@@ -166,11 +183,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A53B0223EBDD220079A3AE /* BreweryEntity+CoreDataClass.swift in Sources */,
 				F386BC9023EB47EF00A10974 /* BreweryMapVC.swift in Sources */,
 				F3B6D0BD23EAB690009947D2 /* ListOfBreweriesVC.swift in Sources */,
+				F3A53B0323EBDD220079A3AE /* BreweryEntity+CoreDataProperties.swift in Sources */,
 				F3B6D0B923EAB690009947D2 /* AppDelegate.swift in Sources */,
 				F3A53AFC23EB53980079A3AE /* Brewery.swift in Sources */,
 				F386BC8E23EB316300A10974 /* WebVC.swift in Sources */,
+				F3A53AFF23EBDA1B0079A3AE /* BreweryCD.xcdatamodeld in Sources */,
 				F386BC8C23EAFAE700A10974 /* NetworkService.swift in Sources */,
 				F3B6D0BB23EAB690009947D2 /* SceneDelegate.swift in Sources */,
 			);
@@ -370,6 +390,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F3A53AFD23EBDA1B0079A3AE /* BreweryCD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3A53AFE23EBDA1B0079A3AE /* BreweryCD.xcdatamodel */,
+			);
+			currentVersion = F3A53AFE23EBDA1B0079A3AE /* BreweryCD.xcdatamodel */;
+			path = BreweryCD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F3B6D0AD23EAB68F009947D2 /* Project object */;
 }
