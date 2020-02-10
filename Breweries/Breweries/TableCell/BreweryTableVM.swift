@@ -13,9 +13,14 @@ class BreweryTableVM: NSObject{
     
     private var breweries: [Brewery]
     private var cellsVM: BreweryCellVM
+    var searchResultUpdating = SearchBarVM()
     
     override init() {
         breweries = BreweriesManager.shared.breweries ?? [Brewery]()
+        cellsVM = BreweryCellVM(breweries: breweries)
+    }
+    
+    func updateCellsModel (breweries: [Brewery]) {
         cellsVM = BreweryCellVM(breweries: breweries)
     }
     
@@ -24,6 +29,11 @@ class BreweryTableVM: NSObject{
 extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if searchResultUpdating.isFiltering {
+            updateCellsModel(breweries: searchResultUpdating.filteredBreweries)
+        } else {
+            updateCellsModel(breweries: self.breweries)
+        }
         return cellsVM.cellsVM.count
     }
     
