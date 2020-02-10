@@ -33,6 +33,7 @@
 		F3BAD73C23EE8DA900D82AAE /* BreweryCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BAD73B23EE8DA900D82AAE /* BreweryCellVM.swift */; };
 		F3F4015F23F0229400673232 /* BreweryTableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4015E23F0229400673232 /* BreweryTableVM.swift */; };
 		F3FACED123F19E0E0069F478 /* SearchBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FACED023F19E0E0069F478 /* SearchBarVM.swift */; };
+		F3FACED323F1CF0B0069F478 /* SearchBarVMDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FACED223F1CF0B0069F478 /* SearchBarVMDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F3BAD73B23EE8DA900D82AAE /* BreweryCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryCellVM.swift; sourceTree = "<group>"; };
 		F3F4015E23F0229400673232 /* BreweryTableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryTableVM.swift; sourceTree = "<group>"; };
 		F3FACED023F19E0E0069F478 /* SearchBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarVM.swift; sourceTree = "<group>"; };
+		F3FACED223F1CF0B0069F478 /* SearchBarVMDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarVMDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,6 @@
 				F3A53B0723EBEDF30079A3AE /* PersistenceService.swift */,
 				F386BC8B23EAFAE700A10974 /* NetworkService.swift */,
 				F3A53B0523EBDF9A0079A3AE /* BreweriesManager.swift */,
-				F3FACED023F19E0E0069F478 /* SearchBarVM.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -144,19 +145,37 @@
 		F3B6D0B723EAB690009947D2 /* Breweries */ = {
 			isa = PBXGroup;
 			children = (
+				F3FACED523F1DAA90069F478 /* Models */,
+				F39628E123EC53F400E2040B /* TableCell */,
+				F3FACED423F1DA480069F478 /* SearchBar */,
 				F3A53B0423EBDD5B0079A3AE /* CoreData */,
 				F386BC9123EB483900A10974 /* Controlleres */,
 				F386BC8A23EAFA9C00A10974 /* Services */,
 				F3B6D0B823EAB690009947D2 /* AppDelegate.swift */,
 				F3B6D0BA23EAB690009947D2 /* SceneDelegate.swift */,
 				F3B6D0BE23EAB690009947D2 /* Main.storyboard */,
-				F3A53AFB23EB53980079A3AE /* Brewery.swift */,
 				F3B6D0C123EAB691009947D2 /* Assets.xcassets */,
 				F3B6D0C323EAB691009947D2 /* LaunchScreen.storyboard */,
 				F3B6D0C623EAB691009947D2 /* Info.plist */,
-				F39628E123EC53F400E2040B /* TableCell */,
 			);
 			path = Breweries;
+			sourceTree = "<group>";
+		};
+		F3FACED423F1DA480069F478 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				F3FACED023F19E0E0069F478 /* SearchBarVM.swift */,
+				F3FACED223F1CF0B0069F478 /* SearchBarVMDelegate.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		F3FACED523F1DAA90069F478 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3A53AFB23EB53980079A3AE /* Brewery.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3A53B0223EBDD220079A3AE /* BreweryEntity+CoreDataClass.swift in Sources */,
+				F3FACED323F1CF0B0069F478 /* SearchBarVMDelegate.swift in Sources */,
 				F3FACED123F19E0E0069F478 /* SearchBarVM.swift in Sources */,
 				F386BC9023EB47EF00A10974 /* BreweryMapVC.swift in Sources */,
 				F39628E923EC912800E2040B /* TypeOfCell.swift in Sources */,
