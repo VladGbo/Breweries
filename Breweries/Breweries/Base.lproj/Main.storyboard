@@ -16,16 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F7e-ZG-g2v">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="16" y="44" width="382" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="F7e-ZG-g2v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6jf-yC-PB1"/>
-                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DZU-h1-wa4"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-16" id="DZU-h1-wa4"/>
                             <constraint firstItem="F7e-ZG-g2v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="blK-kE-doV"/>
-                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fsQ-HD-HWE"/>
+                            <constraint firstItem="F7e-ZG-g2v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fsQ-HD-HWE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
