@@ -23,7 +23,9 @@ class BreweryCellVM {
         
         breweries.forEach { (brewery) in
             
-            if let name = brewery.name, let phone = brewery.phone, let website = brewery.website {
+            if let name = brewery.name,
+                let phone = brewery.phone,
+                let website = brewery.website {
             
                 let mainCellVM = MainBeweryCellVM(nameOfCompany: name, phoneNumber: phone, website: website)
                 cellsVM.append(mainCellVM)
@@ -33,9 +35,17 @@ class BreweryCellVM {
                 let country = brewery.country,
                 let state = brewery.state,
                 let city = brewery.city,
-                let street = brewery.street {
+                let street = brewery.street,
+                let longitude = brewery.longitude,
+                let latitude = brewery.latitude{
                 
-                let supportCellVM = SupportBreweryCellVM (nameOfCompany: name, country: country, state: state, city: city, street: street)
+                let supportCellVM = SupportBreweryCellVM (nameOfCompany: name,
+                                                          country: country,
+                                                          state: state,
+                                                          city: city,
+                                                          street: street,
+                                                          longitude: longitude,
+                                                          latitude: latitude)
                 cellsVM.append(supportCellVM)
             }
             

@@ -9,11 +9,17 @@
 import Foundation
 import UIKit
 
+protocol BreweryTableVMDelegate: AnyObject {
+    var navController: UINavigationController { get }
+}
+
 class BreweryTableVM: NSObject{
     
     private var breweries: [Brewery]
     private var cellsVM: BreweryCellVM
     var searchResultUpdating = SearchBarVM()
+    weak var delegate: BreweryTableVMDelegate?
+    
     
     override init() {
         breweries = BreweriesManager.shared.breweries ?? [Brewery]()
@@ -51,21 +57,46 @@ extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
         return headerView
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = cellsVM.cellsVM[indexPath.section]
         switch model.type {
         case .mainCell:
             if let cell = tableView.dequeueReusableCell(withIdentifier: model.nameInBundle) as? MainBreweryTVC {
                 cell.cellVM = model
+                cell.delegate = self
                 return cell
             }
         case .supportCell:
             if let cell = tableView.dequeueReusableCell(withIdentifier: model.nameInBundle) as? SupportBreweryTVC {
                 cell.cellVM = model
+                cell.delegate = self
                 return cell
             }
         }
         return UITableViewCell()
     }
     
+}
+
+extension BreweryTableVM: MainBreweryTVCDelegate {
+    func didPresedWebsite(link: String) {
+        print(link)
+    }
+}
+
+extension BreweryTableVM: SupportBreweryTVCDelegate {
+    func didPressedOnMap(lat: String, lon: String, title: String, subTitle: String) {
+        let model  = BreweryMapVM(latitude: lat, longitude: lon, title: title, subTitle: subTitle)
+        
+        guard let mapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BreweryMapVC") as? BreweryMapVC else {return}
+        mapVC.model = model
+        self.delegate?.navController.pushViewController(mapVC, animated: true)
+        
+        print(lat)
+        print(lon)
+        print(title)
+        print(subTitle)
+    }
 }

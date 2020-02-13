@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import MapKit
+
+protocol SupportBreweryTVCDelegate: AnyObject {
+    func didPressedOnMap(lat: String, lon: String, title: String, subTitle: String)
+}
 
 class SupportBreweryTVC: UITableViewCell {
 
@@ -16,6 +21,9 @@ class SupportBreweryTVC: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var streetLabel: UILabel!
     @IBOutlet weak var mapButton: UIButton!
+    weak var delegate: SupportBreweryTVCDelegate?
+    private var latitude: String?
+    private var longitude: String?
     
     var cellVM: BreweryCellProtocol? {
         didSet {
@@ -25,6 +33,8 @@ class SupportBreweryTVC: UITableViewCell {
             self.stateLabel.text = "State: \(cellVM.state)"
             self.cityLabel.text = "City: \(cellVM.city)"
             self.streetLabel.text = "Street: \(cellVM.street)"
+            self.latitude = cellVM.latitude
+            self.longitude = cellVM.longitude
         }
     }
     
@@ -39,6 +49,12 @@ class SupportBreweryTVC: UITableViewCell {
     }
     
     @IBAction func tappedOnShowMap(_ sender: UIButton) {
+        if let lat = self.latitude,
+            let lon = self.longitude,
+            let title = self.nameOfCompanyLabel.text,
+            let subtitle = self.streetLabel.text{
+        delegate?.didPressedOnMap(lat: lat, lon: lon, title: title, subTitle: subtitle)
+        }
     }
     
     

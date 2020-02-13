@@ -74,18 +74,7 @@
                     <view key="view" contentMode="scaleToFill" id="N1A-1x-njh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pvh-3e-TNt">
-                                <rect key="frame" x="0.0" y="44" width="414" height="868"/>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="pvh-3e-TNt" firstAttribute="leading" secondItem="F7w-WA-m31" secondAttribute="leading" id="Inm-h5-2Ct"/>
-                            <constraint firstItem="pvh-3e-TNt" firstAttribute="top" secondItem="F7w-WA-m31" secondAttribute="top" id="QNc-5x-kvP"/>
-                            <constraint firstItem="pvh-3e-TNt" firstAttribute="trailing" secondItem="F7w-WA-m31" secondAttribute="trailing" id="ZaN-0b-LEk"/>
-                            <constraint firstAttribute="bottom" secondItem="pvh-3e-TNt" secondAttribute="bottom" constant="-16" id="nvR-nX-3i5"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F7w-WA-m31"/>
                     </view>
                 </viewController>

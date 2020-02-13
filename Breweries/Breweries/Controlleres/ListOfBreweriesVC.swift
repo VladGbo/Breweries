@@ -20,6 +20,7 @@ class ListOfBreweriesVC: UIViewController {
         self.breweriesTableView.delegate = self.tableVM
         self.breweriesTableView.dataSource = self.tableVM
         self.tableVM.searchResultUpdating.delegate = self
+        self.tableVM.delegate = self
         settingSearchController()
         
         let mainNib = UINib(nibName: "MainBreweryTVC", bundle: nil)
@@ -49,4 +50,13 @@ extension ListOfBreweriesVC: SearchBarVMDelegate {
     var breweryBreweriesTableView: UITableView {
         return self.breweriesTableView
     }
+}
+
+extension ListOfBreweriesVC: BreweryTableVMDelegate {
+    var navController: UINavigationController {
+        return self.navigationController ?? UINavigationController()
+    }
+    
+    
+    
 }
