@@ -93,10 +93,6 @@ extension BreweryTableVM: SupportBreweryTVCDelegate {
         guard let mapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BreweryMapVC") as? BreweryMapVC else {return}
         mapVC.model = model
         self.delegate?.navController.pushViewController(mapVC, animated: true)
-        
-        print(lat)
-        print(lon)
-        print(title)
-        print(subTitle)
+
     }
 }
