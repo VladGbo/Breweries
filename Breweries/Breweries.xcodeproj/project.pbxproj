@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F312D12A23FA9B8B004FFACC /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312D12923FA9B8B004FFACC /* NSAttributedStringExtension.swift */; };
 		F386BC8C23EAFAE700A10974 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC8B23EAFAE700A10974 /* NetworkService.swift */; };
 		F386BC9023EB47EF00A10974 /* BreweryMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC8F23EB47EF00A10974 /* BreweryMapVC.swift */; };
 		F39628DF23EC53E100E2040B /* MainBreweryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39628DD23EC53E100E2040B /* MainBreweryTVC.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F312D12923FA9B8B004FFACC /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		F386BC8B23EAFAE700A10974 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F386BC8F23EB47EF00A10974 /* BreweryMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryMapVC.swift; sourceTree = "<group>"; };
 		F39628DD23EC53E100E2040B /* MainBreweryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBreweryTVC.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F312D12823FA9B1F004FFACC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F312D12923FA9B8B004FFACC /* NSAttributedStringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		F386BC8A23EAFA9C00A10974 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		F3B6D0B723EAB690009947D2 /* Breweries */ = {
 			isa = PBXGroup;
 			children = (
+				F312D12823FA9B1F004FFACC /* Extension */,
 				F3FACED523F1DAA90069F478 /* Models */,
 				F39628E123EC53F400E2040B /* TableCell */,
 				F3FACED423F1DA480069F478 /* SearchBar */,
@@ -252,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3A53B0223EBDD220079A3AE /* BreweryEntity+CoreDataClass.swift in Sources */,
+				F312D12A23FA9B8B004FFACC /* NSAttributedStringExtension.swift in Sources */,
 				F3FACED323F1CF0B0069F478 /* SearchBarVMDelegate.swift in Sources */,
 				F3FACED123F19E0E0069F478 /* SearchBarVM.swift in Sources */,
 				F386BC9023EB47EF00A10974 /* BreweryMapVC.swift in Sources */,

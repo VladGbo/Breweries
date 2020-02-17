@@ -67,4 +67,5 @@ class SupportBreweryTVC: UITableViewCell {
         mapButton.layer.cornerRadius = 7.0
     }
     
+   
 }

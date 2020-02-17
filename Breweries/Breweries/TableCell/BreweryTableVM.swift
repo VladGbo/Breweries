@@ -86,7 +86,8 @@ extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
 
 extension BreweryTableVM: MainBreweryTVCDelegate {
     func didPresedWebsite(link: String) {
-        print(link)
+       // let attributedString = NSAttributedString.makeHiperLink(for: link, in: <#T##String#>, as: <#T##String#>)
+        
     }
 }
 
