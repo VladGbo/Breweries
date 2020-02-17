@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 protocol BreweryTableVMDelegate: AnyObject {
     var navController: UINavigationController { get }
@@ -64,13 +65,16 @@ extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
         switch model.type {
         case .mainCell:
             if let cell = tableView.dequeueReusableCell(withIdentifier: model.nameInBundle) as? MainBreweryTVC {
-                cell.cellVM = model
-                cell.delegate = self
+                DispatchQueue.main.async {
+                    cell.cellVM = model
+                }
                 return cell
             }
         case .supportCell:
             if let cell = tableView.dequeueReusableCell(withIdentifier: model.nameInBundle) as? SupportBreweryTVC {
-                cell.cellVM = model
+                DispatchQueue.main.async {
+                    cell.cellVM = model
+                }
                 cell.delegate = self
                 return cell
             }
@@ -78,13 +82,25 @@ extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = cellsVM.cellsVM[indexPath.section]
+        if model.type == .mainCell {
+            guard let mainData = model as? MainBeweryCellVM else { return }
+            guard let url = URL(string: mainData.website) else {return }
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            
+            let vc = SFSafariViewController(url: url , configuration: config)
+            vc.title = "Website"
+            vc.modalPresentationStyle = .formSheet
+            vc.modalTransitionStyle = .crossDissolve
+            delegate?.navController.pushViewController(vc, animated: true)
+            
+        }
+    }
+    
 }
 
-extension BreweryTableVM: MainBreweryTVCDelegate {
-    func didPresedWebsite(link: String) {
-        print(link)
-    }
-}
 
 extension BreweryTableVM: SupportBreweryTVCDelegate {
     func didPressedOnMap(lat: String, lon: String, title: String, subTitle: String) {
@@ -93,6 +109,5 @@ extension BreweryTableVM: SupportBreweryTVCDelegate {
         guard let mapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BreweryMapVC") as? BreweryMapVC else {return}
         mapVC.model = model
         self.delegate?.navController.pushViewController(mapVC, animated: true)
-
     }
 }

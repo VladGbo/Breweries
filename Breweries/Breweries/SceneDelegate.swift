@@ -19,14 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = storyBoard.instantiateViewController(identifier: "ListOfBreweries") as! ListOfBreweriesVC
-        let navController = UINavigationController(rootViewController: mainVC)
-        
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
-        
-        
+        BreweriesManager.shared.fetchBreweries(complitionResult: { (_) in
+            DispatchQueue.main.async {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainVC = storyBoard.instantiateViewController(identifier: "ListOfBreweries") as! ListOfBreweriesVC
+                let navController = UINavigationController(rootViewController: mainVC)
+                self.window?.rootViewController = navController
+                self.window?.makeKeyAndVisible()
+            }
+        })
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

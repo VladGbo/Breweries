@@ -21,7 +21,10 @@ class ListOfBreweriesVC: UIViewController {
         self.breweriesTableView.dataSource = self.tableVM
         self.tableVM.searchResultUpdating.delegate = self
         self.tableVM.delegate = self
-        settingSearchController()
+        DispatchQueue.main.async {
+            self.settingSearchController()
+        }
+        
         
         let mainNib = UINib(nibName: "MainBreweryTVC", bundle: nil)
         breweriesTableView.register(mainNib, forCellReuseIdentifier: "MainBreweryTVC")

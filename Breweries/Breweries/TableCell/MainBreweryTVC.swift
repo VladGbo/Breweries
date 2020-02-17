@@ -8,30 +8,26 @@
 
 import UIKit
 
-protocol MainBreweryTVCDelegate: AnyObject {
-    func didPresedWebsite(link: String)
-}
-
 class MainBreweryTVC: UITableViewCell {
 
     @IBOutlet weak var nameOfCompanyLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
-    weak var delegate: MainBreweryTVCDelegate?
     
     var cellVM: BreweryCellProtocol? {
         didSet {
             guard let cellVM = cellVM as? MainBeweryCellVM else { return }
             self.nameOfCompanyLabel.text = cellVM.nameOfCompany
             self.phoneNumberLabel.text = "Phone: \(cellVM.phoneNumber)"
-            self.websiteLabel.text = "Website: \(cellVM.website)"
+            let hyperLinkWithTitle = "Website: \(cellVM.website)"
+            let attributedString = NSAttributedString.makeHiperLink(for: cellVM.website, in: hyperLinkWithTitle, as: cellVM.website)
+            self.websiteLabel.attributedText = attributedString
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setStyle()
-        setGestureForWebsite()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,15 +46,5 @@ class MainBreweryTVC: UITableViewCell {
         muteText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: NSRange(location:2,length:4))
         
         return muteText
-    }
-    private func setGestureForWebsite(){
-        let tap = UIGestureRecognizer(target: self, action: #selector(tappedOnWebsite))
-        websiteLabel.addGestureRecognizer(tap)
-        websiteLabel.isUserInteractionEnabled = true
-    }
-    
-    @objc private func tappedOnWebsite() {
-        guard let link = websiteLabel.text else { return }
-        delegate?.didPresedWebsite(link: link)
     }
 }

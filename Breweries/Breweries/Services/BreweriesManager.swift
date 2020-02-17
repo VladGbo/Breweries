@@ -13,24 +13,25 @@ class BreweriesManager {
     static let shared = BreweriesManager()
     private init () {}
     
+    typealias Result = ([Brewery])->Void
+    
     var breweries: [Brewery]?
-    func fetchBreweries () {
+    func fetchBreweries (complitionResult:@escaping Result) {
         NetworkService.shared.requestFetchListOfBreweries { (breweries, error) in
             if let breweries = breweries {
                 self.breweries = breweries
+                complitionResult(breweries)
                 PersistenceService.shared.updateBreweriesCoreData(breweries: breweries)
             } else {
                 PersistenceService.shared.fetchFromPersistenceStore { (persistenceBreweries, error) in
                     if let persistenceBreweries = persistenceBreweries {
                         self.breweries = persistenceBreweries
-                    } else {
-                        self.breweries = [Brewery]()
+                        complitionResult(persistenceBreweries)
                     }
                 }
             }
-            
             if let _ = error {
-                self.breweries = [Brewery]()
+                complitionResult([Brewery]())
             }
         }
     }
