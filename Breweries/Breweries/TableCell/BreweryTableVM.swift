@@ -92,6 +92,8 @@ extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
             
             let vc = SFSafariViewController(url: url , configuration: config)
             vc.title = "Website"
+            vc.modalPresentationStyle = .formSheet
+            vc.modalTransitionStyle = .crossDissolve
             delegate?.navController.pushViewController(vc, animated: true)
             
         }
