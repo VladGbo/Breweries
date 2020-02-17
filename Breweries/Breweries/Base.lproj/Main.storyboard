@@ -37,36 +37,6 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
-        <!--WebVC-->
-        <scene sceneID="NhT-Hx-bHw">
-            <objects>
-                <viewController storyboardIdentifier="WebVC" id="Ne8-CL-Apx" customClass="WebVC" customModule="Breweries" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oJf-I1-ydx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaL-gz-ahp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="UaL-gz-ahp" firstAttribute="trailing" secondItem="7yx-bY-bZf" secondAttribute="trailing" id="IKE-Hg-4ap"/>
-                            <constraint firstItem="UaL-gz-ahp" firstAttribute="leading" secondItem="7yx-bY-bZf" secondAttribute="leading" id="g4t-So-9fO"/>
-                            <constraint firstItem="UaL-gz-ahp" firstAttribute="bottom" secondItem="7yx-bY-bZf" secondAttribute="bottom" id="xSO-kg-GJb"/>
-                            <constraint firstItem="UaL-gz-ahp" firstAttribute="top" secondItem="7yx-bY-bZf" secondAttribute="top" id="z4v-Gy-mhs"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="7yx-bY-bZf"/>
-                    </view>
-                    <connections>
-                        <outlet property="breweryWebView" destination="UaL-gz-ahp" id="YCl-mI-WYk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aqe-uc-Hj7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1014" y="134"/>
-        </scene>
         <!--Brewery MapVC-->
         <scene sceneID="Yqp-qa-zfC">
             <objects>

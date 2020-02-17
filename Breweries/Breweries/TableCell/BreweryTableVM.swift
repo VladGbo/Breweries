@@ -64,13 +64,17 @@ extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
         switch model.type {
         case .mainCell:
             if let cell = tableView.dequeueReusableCell(withIdentifier: model.nameInBundle) as? MainBreweryTVC {
-                cell.cellVM = model
+                DispatchQueue.main.async {
+                    cell.cellVM = model
+                }
                 cell.delegate = self
                 return cell
             }
         case .supportCell:
             if let cell = tableView.dequeueReusableCell(withIdentifier: model.nameInBundle) as? SupportBreweryTVC {
-                cell.cellVM = model
+                DispatchQueue.main.async {
+                    cell.cellVM = model
+                }
                 cell.delegate = self
                 return cell
             }
@@ -93,10 +97,5 @@ extension BreweryTableVM: SupportBreweryTVCDelegate {
         guard let mapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BreweryMapVC") as? BreweryMapVC else {return}
         mapVC.model = model
         self.delegate?.navController.pushViewController(mapVC, animated: true)
-        
-        print(lat)
-        print(lon)
-        print(title)
-        print(subTitle)
     }
 }
