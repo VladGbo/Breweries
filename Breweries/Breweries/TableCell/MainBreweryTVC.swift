@@ -8,16 +8,11 @@
 
 import UIKit
 
-protocol MainBreweryTVCDelegate: AnyObject {
-    func didPresedWebsite(link: String)
-}
-
 class MainBreweryTVC: UITableViewCell {
 
     @IBOutlet weak var nameOfCompanyLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
-    weak var delegate: MainBreweryTVCDelegate?
     
     var cellVM: BreweryCellProtocol? {
         didSet {

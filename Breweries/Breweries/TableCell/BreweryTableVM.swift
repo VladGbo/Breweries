@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 protocol BreweryTableVMDelegate: AnyObject {
     var navController: UINavigationController { get }
@@ -67,7 +68,6 @@ extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
                 DispatchQueue.main.async {
                     cell.cellVM = model
                 }
-                cell.delegate = self
                 return cell
             }
         case .supportCell:
@@ -82,14 +82,23 @@ extension BreweryTableVM: UITableViewDataSource, UITableViewDelegate {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = cellsVM.cellsVM[indexPath.section]
+        if model.type == .mainCell {
+            guard let mainData = model as? MainBeweryCellVM else { return }
+            guard let url = URL(string: mainData.website) else {return }
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            
+            let vc = SFSafariViewController(url: url , configuration: config)
+            vc.title = "Website"
+            delegate?.navController.pushViewController(vc, animated: true)
+            
+        }
+    }
+    
 }
 
-extension BreweryTableVM: MainBreweryTVCDelegate {
-    func didPresedWebsite(link: String) {
-       // let attributedString = NSAttributedString.makeHiperLink(for: link, in: <#T##String#>, as: <#T##String#>)
-        
-    }
-}
 
 extension BreweryTableVM: SupportBreweryTVCDelegate {
     func didPressedOnMap(lat: String, lon: String, title: String, subTitle: String) {
